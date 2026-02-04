@@ -128,6 +128,11 @@ img {
     height: auto;
 }
 
+.visually-hidden {
+    position: absolute;
+    clip: rect(0, 0, 0, 0);
+}
+
 a {
     color: var(--color-accent);
     text-decoration: none;
