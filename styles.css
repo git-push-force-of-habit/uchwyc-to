@@ -383,7 +383,7 @@ a:focus-visible {
 
 @media (min-width: 50em) {
     .hero-description {
-        max-width: 28.75rem;
+        max-width: 30rem;
     }
 }
 
