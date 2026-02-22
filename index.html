@@ -14,14 +14,111 @@
     <meta property="og:site_name" content="uchwyć.to">
     <meta property="og:description" content="Sylwia i Michał. Fotografujemy od 2018 roku - portrety, eventy, wnętrza. Działamy w Olsztynie i Warszawie.">
     <meta property="og:type" content="website">
+    <meta property="og:locale" content="pl_PL">
     <meta property="og:url" content="https://uchwyc.to/">
     <meta property="og:image" content="https://uchwyc.to/gfx/og-image.png">
+    <meta property="og:image:type" content="image/png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
     
+    <meta name="theme-color" content="#1F2327">
+    
+    <link rel="preload" href="fonts/dm-sans-variable-latin-ext.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="preload" href="fonts/dm-sans-variable-latin.woff2" as="font" type="font/woff2" crossorigin>
     <link rel="stylesheet" href="styles.css">
     <link rel="icon" href="/gfx/favicon.svg" type="image/svg+xml">
     <link rel="icon" href="/gfx/favicon.ico">
     <link rel="apple-touch-icon" sizes="180x180" href="/gfx/apple-touch-icon.png">
     <link rel="manifest" href="/site.webmanifest">
+
+    <!-- Structured Data -->
+    <script type="application/ld+json">
+        {
+            "@context": "https://schema.org",
+            "@type": "PhotographyBusiness",
+            "name": "uchwyć.to",
+            "description": "Sylwia i Michał. Fotografujemy od 2018 roku - portrety, eventy, wnętrza. Działamy w Olsztynie i Warszawie.",
+            "url": "https://uchwyc.to/",
+            "telephone": ["+48511901900", "+48510903900"],
+            "image": "https://uchwyc.to/gfx/og-image.png",
+            "logo": "https://uchwyc.to/gfx/uchwyc.to.svg",
+            "foundingDate": "2018",
+            "taxID": "7393619526",
+            "address": {
+                "@type": "PostalAddress",
+                "streetAddress": "ul. Władysława Trylińskiego 2",
+                "addressLocality": "Olsztyn",
+                "postalCode": "10-683",
+                "addressCountry": "PL"
+            },
+            "areaServed": [
+                {
+                    "@type": "City",
+                    "name": "Olsztyn"
+                },
+                {
+                    "@type": "City",
+                    "name": "Warszawa"
+                }
+            ],
+            "openingHoursSpecification": [
+                {
+                    "@type": "OpeningHoursSpecification",
+                    "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+                    "opens": "09:30",
+                    "closes": "21:00"
+                },
+                {
+                    "@type": "OpeningHoursSpecification",
+                    "dayOfWeek": ["Saturday", "Sunday"],
+                    "opens": "12:00",
+                    "closes": "21:00"
+                }
+            ],
+            "hasOfferCatalog": {
+                "@type": "OfferCatalog",
+                "name": "Usługi fotograficzne",
+                "itemListElement": [
+                    {
+                        "@type": "Offer",
+                        "itemOffered": {
+                            "@type": "Service",
+                            "name": "Fotografia portretowa",
+                            "description": "Naturalne światło, plener albo ulubione miejsce. Dla par, rodzin, singli."
+                        }
+                    },
+                    {
+                        "@type": "Offer",
+                        "itemOffered": {
+                            "@type": "Service",
+                            "name": "Zdjęcia do dokumentów",
+                            "description": "Mobilna sesja zdjęciowa do dokumentów. Dojazd do klienta, wybór najlepszego ujęcia na miejscu."
+                        }
+                    },
+                    {
+                        "@type": "Offer",
+                        "itemOffered": {
+                            "@type": "Service",
+                            "name": "Fotografia eventowa",
+                            "description": "Urodziny, rocznice, spotkania firmowe, koncerty."
+                        }
+                    },
+                    {
+                        "@type": "Offer",
+                        "itemOffered": {
+                            "@type": "Service",
+                            "name": "Fotografia wnętrz",
+                            "description": "Zdjęcia mieszkań, przestrzeni biurowych i klimatycznych lokalizacji."
+                        }
+                    }
+                ]
+            },
+            "sameAs": [
+                "https://www.instagram.com/uchwyc.to/",
+                "https://glass.photo/uchwyc.to"
+            ]
+        }
+    </script>
 </head>
 <body>
     <header class="header">
@@ -46,7 +143,7 @@
                 <a href="#contact" class="button">Kontakt</a>
             </div>
             <div class="hero-image">
-                <img src="gfx/sylwia.avif" alt="" width="600" height="400" loading="eager">
+                <img src="gfx/sylwia.avif" alt="Czarno-biały portret Sylwii — zbliżenie na oczy" width="600" height="400" loading="eager" fetchpriority="high">
             </div>
         </section>
 
@@ -125,7 +222,7 @@
                             <td><a href="tel:+48510903900">510 903 900</a></td>
                         </tr>
                     </table>
-                    <a href="mailto:uchwyc.to@outlook.com">uchwyc.to@outlook.com</a>
+                    <a id="contactEmail" href="#contact">[e-mail]</a>
                     <ul class="social-links">
                         <li>
                             <a href="https://www.instagram.com/uchwyc.to/" target="_blank" rel="noopener noreferrer" class="social-link">
@@ -157,5 +254,15 @@
     <footer class="footer wrapper">
         <p class="footer-text">© uchwyć.to<br>NIP: 7393619526<br>10-683 Olsztyn, ul. Władysława Trylińskiego 2</p>
     </footer>
+    <script>
+        (function() {
+            var e = atob('dWNod3ljLnRvQG91dGxvb2suY29t');
+            var el = document.getElementById('contactEmail');
+            if (el) {
+                el.href = 'mai' + 'lto:' + e;
+                el.textContent = e;
+            }
+        })();
+    </script>
 </body>
 </html>
