@@ -31,6 +31,7 @@
     --color-bg: #1F2327;
     --color-text: #DFE0E1;
     --color-accent: #44CB05;
+    --color-accent: oklch(0.6585 0.2738 144);
     --color-white: #ffffff;
 
     /* Typography */
@@ -83,6 +84,12 @@ html {
 @media (min-width: 75em) {
     html {
         scroll-padding-top: 7.5rem;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    html {
+        scroll-behavior: auto;
     }
 }
 
